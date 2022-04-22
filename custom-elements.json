@@ -4,13 +4,78 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "web-dev-server.config.d.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "_default",
+          "type": {
+            "text": "Partial<import(\"@web/dev-server/dist/config/DevServerConfig\").DevServerConfig>"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "_default",
+            "module": "web-dev-server.config.d.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "docs/pfe.min.js",
       "declarations": [],
       "exports": []
     },
     {
       "kind": "javascript-module",
+      "path": "scripts/build.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scripts/build.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scripts/license-update.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scripts/license-update.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scripts/open-pr.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scripts/open-pr.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "_site/assets/pfe.min.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "_site/js/global.d.ts",
       "declarations": [],
       "exports": []
     },
@@ -97,79 +162,9 @@
     },
     {
       "kind": "javascript-module",
-      "path": "elements/rh-alert/rh-alert.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Alert",
-          "name": "RhAlert",
-          "slots": [
-            {
-              "description": "Place element content here",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "version",
-              "type": {
-                "text": "string"
-              },
-              "static": true,
-              "default": "'{{version}}'"
-            },
-            {
-              "kind": "field",
-              "name": "styles",
-              "type": {
-                "text": "array"
-              },
-              "static": true,
-              "default": "[styles]"
-            },
-            {
-              "kind": "field",
-              "name": "icon"
-            },
-            {
-              "kind": "field",
-              "name": "state",
-              "type": {
-                "text": "'default'|'error'|'success'|'warning'|'danger'|'info'"
-              },
-              "default": "'default'"
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false"
-            },
-            {
-              "kind": "method",
-              "name": "render"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "RhAlert",
-          "declaration": {
-            "name": "RhAlert",
-            "module": "elements/rh-alert/rh-alert.ts"
-          }
-        }
-      ]
+      "path": "docs/js/global.d.ts",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -248,6 +243,93 @@
           "declaration": {
             "name": "RhdsComponentStatus",
             "module": "docs/js/global.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/rh-alert/rh-alert.css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "elements/rh-alert/rh-alert.css.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/rh-alert/rh-alert.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Alert",
+          "name": "RhAlert",
+          "slots": [
+            {
+              "description": "Place element content here",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "version",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "'{{version}}'"
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "static": true,
+              "default": "styles"
+            },
+            {
+              "kind": "field",
+              "name": "icon"
+            },
+            {
+              "kind": "field",
+              "name": "state",
+              "type": {
+                "text": "'default'|'error'|'success'|'warning'|'danger'|'info'"
+              },
+              "default": "'default'"
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RhAlert",
+          "declaration": {
+            "name": "RhAlert",
+            "module": "elements/rh-alert/rh-alert.ts"
           }
         }
       ]

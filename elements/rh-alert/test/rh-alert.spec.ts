@@ -1,6 +1,6 @@
 import { expect, html } from '@open-wc/testing';
 import { createFixture } from '@patternfly/pfe-tools/test/create-fixture.js';
-import { RhAlert } from 'rh-alert';
+import { RhAlert } from '../rh-alert';
 
 const element = html`
   <rh-alert></rh-alert>

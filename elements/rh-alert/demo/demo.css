@@ -2,3 +2,7 @@
 :host {
   display: block;
 }
+
+rh-alert {
+  margin: 10px 5px;
+}
