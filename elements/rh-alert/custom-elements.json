@@ -1,0 +1,52 @@
+{
+    "schemaVersion": "1.0.0",
+    "readme": "",
+    "modules": [
+      {
+        "kind": "javascript-module",
+        "path": "rh-alert.js",
+        "declarations": [
+          {
+            "kind": "class",
+            "description": "",
+            "name": "RhAlert",
+            "cssProperties": [
+            ],
+            "cssParts": [
+            ],
+            "slots": [
+            ],
+            "members": [
+            ],
+            "attributes": [
+            ],
+            "superclass": {
+              "name": "LitElement",
+              "package": "lit"
+            },
+            "tagName": "rh-alert",
+            "customElement": true
+          }
+        ],
+        "exports": [
+          {
+            "kind": "js",
+            "name": "RhAlert",
+            "declaration": {
+              "name": "RhAlert",
+              "module": "rh-alert.js"
+            }
+          },
+          {
+            "kind": "custom-element-definition",
+            "name": "rh-alert",
+            "declaration": {
+              "name": "RhAlert",
+              "module": "rh-alert.js"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
