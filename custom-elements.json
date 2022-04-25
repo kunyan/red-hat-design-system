@@ -103,147 +103,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "elements/rh-tooltip/rh-tooltip.css.js",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "elements/rh-tooltip/rh-tooltip.css.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/rh-tooltip/rh-tooltip.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Tooltips are used.",
-          "name": "RhTooltip",
-          "members": [
-            {
-              "kind": "field",
-              "name": "version",
-              "type": {
-                "text": "string"
-              },
-              "static": true,
-              "default": "'{{version}}'"
-            },
-            {
-              "kind": "field",
-              "name": "styles",
-              "type": {
-                "text": "array"
-              },
-              "static": true,
-              "default": "[styles]"
-            },
-            {
-              "kind": "field",
-              "name": "position",
-              "type": {
-                "text": "'top'|'left'|'right'|'bottom'"
-              },
-              "default": "'top'"
-            },
-            {
-              "kind": "field",
-              "name": "isOpen",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "true"
-            },
-            {
-              "kind": "field",
-              "name": "offset",
-              "type": {
-                "text": "array"
-              },
-              "default": "[0, 18]"
-            },
-            {
-              "kind": "field",
-              "name": "_id",
-              "privacy": "private",
-              "default": "`${RhTooltip.name}-${getRandomId()}`"
-            },
-            {
-              "kind": "field",
-              "name": "_invoker",
-              "type": {
-                "text": "HTMLElement|null | undefined"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_tooltip",
-              "type": {
-                "text": "HTMLElement|null | undefined"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_popper",
-              "type": {
-                "text": "Instance | undefined"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "firstUpdated"
-            },
-            {
-              "kind": "method",
-              "name": "show"
-            },
-            {
-              "kind": "method",
-              "name": "hide"
-            },
-            {
-              "kind": "method",
-              "name": "render"
-            },
-            {
-              "kind": "method",
-              "name": "_addListeners"
-            },
-            {
-              "kind": "method",
-              "name": "_removeListeners"
-            },
-            {
-              "kind": "method",
-              "name": "_setupPopper"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "summary": "Organizes content in a contained view on the same page",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "RhTooltip",
-          "declaration": {
-            "name": "RhTooltip",
-            "module": "elements/rh-tooltip/rh-tooltip.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "docs/js/global.js",
       "declarations": [
         {
@@ -325,6 +184,85 @@
     },
     {
       "kind": "javascript-module",
+      "path": "elements/rh-tooltip/rh-tooltip.css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "elements/rh-tooltip/rh-tooltip.css.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/rh-tooltip/rh-tooltip.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Tooltips are used.",
+          "name": "RhTooltip",
+          "members": [
+            {
+              "kind": "field",
+              "name": "version",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "'{{version}}'"
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[styles]"
+            },
+            {
+              "kind": "field",
+              "name": "position",
+              "type": {
+                "text": "'top'|'bottom'|'left'|'right'"
+              },
+              "default": "'top'"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "summary": "Organizes content in a contained view on the same page",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RhTooltip",
+          "declaration": {
+            "name": "RhTooltip",
+            "module": "elements/rh-tooltip/rh-tooltip.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/rh-tooltip/demo/rh-tooltip.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "elements/rh-tooltip/lib/createPopper.ts",
       "declarations": [
         {
@@ -345,12 +283,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "elements/rh-tooltip/demo/rh-tooltip.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "elements/rh-tooltip/test/rh-tooltip.e2e.spec.ts",
       "declarations": [],
       "exports": []
@@ -360,6 +292,157 @@
       "path": "elements/rh-tooltip/test/rh-tooltip.spec.ts",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/rh-tooltip/lib/rh-popper/rh-popper-types.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/rh-tooltip/lib/rh-popper/rh-popper.css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "elements/rh-tooltip/lib/rh-popper/rh-popper.css.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/rh-tooltip/lib/rh-popper/rh-popper.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Wrapper for popper.js for rh-tooltip.js. \n\nCan be moved out of this library if we want for multiple packages.",
+          "name": "RhPopper",
+          "members": [
+            {
+              "kind": "field",
+              "name": "version",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "'{{version}}'"
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[styles]"
+            },
+            {
+              "kind": "field",
+              "name": "position",
+              "type": {
+                "text": "Position"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "isOpen",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "offset",
+              "type": {
+                "text": "array"
+              },
+              "default": "[0, 18]"
+            },
+            {
+              "kind": "field",
+              "name": "_id",
+              "privacy": "private",
+              "default": "`${RhPopper.name}-${getRandomId()}`"
+            },
+            {
+              "kind": "field",
+              "name": "_invoker",
+              "type": {
+                "text": "HTMLElement|null | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_tooltip",
+              "type": {
+                "text": "HTMLElement|null | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_popper",
+              "type": {
+                "text": "Instance | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "createPopper",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "firstUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "show"
+            },
+            {
+              "kind": "method",
+              "name": "hide"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "method",
+              "name": "_addListeners"
+            },
+            {
+              "kind": "method",
+              "name": "_removeListeners"
+            },
+            {
+              "kind": "method",
+              "name": "_setupPopper"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "summary": "Organizes content in a contained view on the same page",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RhPopper",
+          "declaration": {
+            "name": "RhPopper",
+            "module": "elements/rh-tooltip/lib/rh-popper/rh-popper.ts"
+          }
+        }
+      ]
     }
   ]
 }
