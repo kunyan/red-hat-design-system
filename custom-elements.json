@@ -27,12 +27,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "docs/pfe.min.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "scripts/build.d.ts",
       "declarations": [],
       "exports": []
@@ -69,44 +63,63 @@
     },
     {
       "kind": "javascript-module",
-      "path": "_site/assets/pfe.min.js",
+      "path": "elements/rh-alert/rh-alert.css.js",
       "declarations": [],
-      "exports": []
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "elements/rh-alert/rh-alert.css.js"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
-      "path": "_site/js/global.d.ts",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "_site/js/global.js",
+      "path": "elements/rh-alert/rh-alert.ts",
       "declarations": [
         {
           "kind": "class",
-          "description": "",
-          "name": "RhdsComponentStatus",
+          "description": "Alert",
+          "name": "RhAlert",
+          "slots": [
+            {
+              "description": "Place element content here",
+              "name": ""
+            }
+          ],
           "members": [
             {
-              "kind": "method",
-              "name": "_render"
-            },
-            {
-              "kind": "method",
-              "name": "_fetchData"
-            },
-            {
               "kind": "field",
-              "name": "spreadSheetUrl",
+              "name": "version",
               "type": {
                 "text": "string"
               },
-              "default": "'https://sheets.googleapis.com/v4/spreadsheets/1OfyP6KZcijXMAX7DvN7KYxlUmp8pqH2WQqQ-ndSc4uc/values/Status?key=AIzaSyB2awA3GspCB7QGF751H06A9BZP6f8FhWM'"
+              "static": true,
+              "default": "'{{version}}'"
             },
             {
               "kind": "field",
-              "name": "loading",
+              "name": "styles",
+              "static": true,
+              "default": "styles"
+            },
+            {
+              "kind": "field",
+              "name": "icon"
+            },
+            {
+              "kind": "field",
+              "name": "state",
+              "type": {
+                "text": "'default'|'error'|'success'|'warning'|'danger'|'info'"
+              },
+              "default": "'default'"
+            },
+            {
+              "kind": "field",
+              "name": "variant",
               "type": {
                 "text": "boolean"
               },
@@ -114,48 +127,31 @@
             },
             {
               "kind": "field",
-              "name": "error",
+              "name": "toast",
               "type": {
                 "text": "boolean"
               },
               "default": "false"
             },
             {
-              "kind": "field",
-              "name": "_componentData",
-              "type": {
-                "text": "object"
-              },
-              "default": "{\n      'columns': [],\n      'components': [],\n    }"
-            },
-            {
-              "kind": "field",
-              "name": "_filteredComponentData",
-              "type": {
-                "text": "object"
-              },
-              "default": "{\n      'columns': [],\n      'components': [],\n    }"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "component"
+              "kind": "method",
+              "name": "render"
             }
           ],
           "superclass": {
-            "name": "HTMLElement"
+            "name": "LitElement",
+            "package": "lit"
           },
-          "tagName": "rhds-component-status",
           "customElement": true
         }
       ],
       "exports": [
         {
-          "kind": "custom-element-definition",
-          "name": "rhds-component-status",
+          "kind": "js",
+          "name": "RhAlert",
           "declaration": {
-            "name": "RhdsComponentStatus",
-            "module": "_site/js/global.js"
+            "name": "RhAlert",
+            "module": "elements/rh-alert/rh-alert.ts"
           }
         }
       ]
@@ -243,93 +239,6 @@
           "declaration": {
             "name": "RhdsComponentStatus",
             "module": "docs/js/global.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/rh-alert/rh-alert.css.js",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "elements/rh-alert/rh-alert.css.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "elements/rh-alert/rh-alert.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Alert",
-          "name": "RhAlert",
-          "slots": [
-            {
-              "description": "Place element content here",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "version",
-              "type": {
-                "text": "string"
-              },
-              "static": true,
-              "default": "'{{version}}'"
-            },
-            {
-              "kind": "field",
-              "name": "styles",
-              "static": true,
-              "default": "styles"
-            },
-            {
-              "kind": "field",
-              "name": "icon"
-            },
-            {
-              "kind": "field",
-              "name": "state",
-              "type": {
-                "text": "'default'|'error'|'success'|'warning'|'danger'|'info'"
-              },
-              "default": "'default'"
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false"
-            },
-            {
-              "kind": "method",
-              "name": "render"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "RhAlert",
-          "declaration": {
-            "name": "RhAlert",
-            "module": "elements/rh-alert/rh-alert.ts"
           }
         }
       ]

@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="/elements/rh-alert/demo/demo.css"/>
 
-<pfe-band color-palette="lightest">
+
+
+<h1><code>rh-alert</code></h1>
+
+
 <rh-alert state="default">
     <div slot="title">Default</div>
     <p slot="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend elit sed est
@@ -8,7 +12,6 @@
     <button class="rh-alert__action-group-item" slot="action-group" dismiss>Dismiss</button>
     <button class="rh-alert__action-group-item" slot="action-group" confirm>Confirm</button>
   </rh-alert>
-</pfe-band>
 
   <rh-alert state="info">
     <div slot="title">Info</div>
@@ -83,3 +86,46 @@
     <button class="rh-alert__action-group-item" slot="action-group" dismiss>Dismiss</button>
     <button class="rh-alert__action-group-item" slot="action-group" confirm>Confirm</button>
   </rh-alert>
+
+
+<h1><code>rh-alert toast</code></h1>
+
+<rh-alert toast>
+  <div slot="title">Default</div>
+  <p slot="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend elit sed est
+    egestas, a sollicitudin mauris tincidunt.</p>
+  <button class="rh-alert__action-group-item" slot="action-group" dismiss>Dismiss</button>
+  <button class="rh-alert__action-group-item" slot="action-group" confirm>Confirm</button>
+</rh-alert>
+
+<rh-alert state="info" toast>
+  <div slot="title">Info</div>
+  <p slot="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend elit sed est
+    egestas, a sollicitudin mauris tincidunt.</p>
+  <button class="rh-alert__action-group-item" slot="action-group" dismiss>Dismiss</button>
+  <button class="rh-alert__action-group-item" slot="action-group" confirm>Confirm</button>
+</rh-alert>
+
+<rh-alert state="success" toast>
+  <div slot="title">Success</div>
+  <p slot="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend elit sed est
+    egestas, a sollicitudin mauris tincidunt.</p>
+  <button class="rh-alert__action-group-item" slot="action-group" dismiss>Dismiss</button>
+  <button class="rh-alert__action-group-item" slot="action-group" confirm>Confirm</button>
+</rh-alert>
+
+<rh-alert state="warning" toast>
+  <div slot="title">Warning</div>
+  <p slot="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend elit sed est
+    egestas, a sollicitudin mauris tincidunt.</p>
+  <button class="rh-alert__action-group-item" slot="action-group" dismiss>Dismiss</button>
+  <button class="rh-alert__action-group-item" slot="action-group" confirm>Confirm</button>
+</rh-alert>
+
+<rh-alert state="danger" toast>
+  <div slot="title">Danger</div>
+  <p slot="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend elit sed est
+    egestas, a sollicitudin mauris tincidunt.</p>
+  <button class="rh-alert__action-group-item" slot="action-group" dismiss>Dismiss</button>
+  <button class="rh-alert__action-group-item" slot="action-group" confirm>Confirm</button>
+</rh-alert>

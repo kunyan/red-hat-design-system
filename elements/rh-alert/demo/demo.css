@@ -4,5 +4,7 @@
 }
 
 rh-alert {
-  margin: 10px 5px;
+  margin: auto;
+  padding: 10px 0px;
+  max-width:40vh;
 }
