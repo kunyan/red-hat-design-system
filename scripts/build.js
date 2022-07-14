@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-import { readdir } from 'node:fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 import { build as esBuild } from 'esbuild';
 import { litCssPlugin } from 'esbuild-plugin-lit-css';
 import { singleFileBuild } from '@patternfly/pfe-tools/esbuild.js';
+// BUG: https://github.com/asyncLiz/minify-html-literals/issues/37
 // import { minifyHTMLLiteralsPlugin } from 'esbuild-plugin-minify-html-literals';
 
 const external = [
@@ -14,15 +15,29 @@ const external = [
   'tslib',
 ];
 
-function toExportStatements(acc = '', x) {
-  return `${acc}\nexport * from '${x}';`;
-}
+/** unary rtl function composition */
+const compose1 = (...fns) => fns.reduce((f, g) => x => f(g(x)));
+const toExportStatements = (acc = '', x) => `${acc}\nexport * from '${x}';`;
+const stripExtension = x => x.replace(/\.\w+$/, '');
+const eqeqeq = (x, y) => x === y;
+const rel = x => new URL(x, import.meta.url);
 
 export async function build(options) {
-  const elements = await readdir(new URL('../elements', import.meta.url));
+  const elements = await readdir(rel('../elements'));
 
-  const entryPoints = elements.map(x =>
-    fileURLToPath(new URL(`../elements/${x}/${x}.js`, import.meta.url)));
+  const conventionalEntryPoints = elements.map(x => `../elements/${x}/${x}.js`);
+
+  const unconventionalEntrypoints = JSON.parse(await readFile(rel('./extra-entrypoints.json', 'utf8')));
+
+  const cssEntryPoints = (await Promise.all(elements
+    .flatMap(x => readdir(rel(`../elements/${x}`))
+      .then(ys => ys.filter(z => z.endsWith('.css')))
+      .then(ys => ys.map(z => fileURLToPath(rel(`../elements/${x}/${z}`))))
+    ))).flat();
+
+  const entryPoints = [...conventionalEntryPoints, ...unconventionalEntrypoints, ...cssEntryPoints]
+    .map(compose1(fileURLToPath, rel))
+    .sort();
 
   const additionalPackages = options?.additionalPackages ?? [];
   const componentsEntryPointContents =
@@ -49,12 +64,15 @@ ${additionalPackages.reduce(toExportStatements, '')}`;
     outbase: 'elements',
     entryNames: '[dir]/[name]',
     allowOverwrite: true,
-    bundle: true,
-    external,
+    // bundle: true,
+    // external,
     format: 'esm',
     sourcemap: 'linked',
     minify: false,
     legalComments: 'linked',
+    loader: {
+      '.css': 'js',
+    },
     plugins: [
       // BUG: https://github.com/asyncLiz/minify-html-literals/issues/37
       // minifyHTMLLiteralsPlugin(),
@@ -62,9 +80,6 @@ ${additionalPackages.reduce(toExportStatements, '')}`;
     ],
   });
 }
-
-const stripExtension = x => x.replace(/\.\w+$/, '');
-const eqeqeq = (x, y) => x === y;
 
 /** Was the module was run directly? */
 const INVOKED_VIA_CLI = [process.argv[1], fileURLToPath(import.meta.url)]
