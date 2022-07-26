@@ -15,12 +15,12 @@ var __decorateClass = (decorators, target, key, kind) => {
     __defProp(target, key, result);
   return result;
 };
-var styles = css`pfe-accordion{--pfe-accordion--MaxWidth--content:none}code-sample{display:flex;flex:1 1 auto;flex-direction:column}`;
+var styles = css`rh-accordion{--rh-accordion--MaxWidth--content:none}code-sample{display:flex;flex:1 1 auto;flex-direction:column}`;
 var rh_demo_default = styles;
 var RhDemo = class extends LitElement {
   constructor() {
     super();
-    import("@patternfly/pfe-accordion");
+    import("@patternfly/rh-accordion");
     import("@lrnwebcomponents/code-sample");
   }
   createRenderRoot() {
@@ -49,16 +49,16 @@ var RhDemo = class extends LitElement {
     return html`
       <div class="rh-demo-preview-area"></div>
       <div part="code" class="rh-demo-code-area">
-        <pfe-accordion>
-          <pfe-accordion-header>
+        <rh-accordion>
+          <rh-accordion-header>
             <h3>View code</h3>
-          </pfe-accordion-header>
-          <pfe-accordion-panel>
+          </rh-accordion-header>
+          <rh-accordion-panel>
             <code-sample>
               <template></template>
             </code-sample>
-          </pfe-accordion-panel>
-        </pfe-accordion>
+          </rh-accordion-panel>
+        </rh-accordion>
       </div>
     `;
   }

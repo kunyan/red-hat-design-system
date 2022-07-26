@@ -7,17 +7,17 @@
   --_section-side-gap: var(--rh-footer-section-side-gap, var(--pf-global--spacer--xl, 32px));
 
   /* Style Accordions */
-  --pfe-accordion--Color: #fff;
-  --pfe-accordion--Color--expanded: #fff;
-  --pfe-accordion--Color--active: #fff;
-  --pfe-accordion--BackgroundColor: transparent;
-  --pfe-accordion--BackgroundColor--active: transparent;
-  --pfe-accordion--BackgroundColor--expanded: #151515;
-  --pfe-accordion--BorderColor: var(--_border-color);
-  --pfe-accordion--FontSize--header: initial;
-  --pfe-accordion--FontWeight--header: 300;
-  --pfe-accordion--accent--expanded: var(--_accent-color);
-  --pfe-accordion--accent--active: var(--_accent-color);
+  --rh-accordion--Color: #fff;
+  --rh-accordion--Color--expanded: #fff;
+  --rh-accordion--Color--active: #fff;
+  --rh-accordion--BackgroundColor: transparent;
+  --rh-accordion--BackgroundColor--active: transparent;
+  --rh-accordion--BackgroundColor--expanded: #151515;
+  --rh-accordion--BorderColor: var(--_border-color);
+  --rh-accordion--FontSize--header: initial;
+  --rh-accordion--FontWeight--header: 300;
+  --rh-accordion--accent--expanded: var(--_accent-color);
+  --rh-accordion--accent--active: var(--_accent-color);
 
   /* apply sensible defaults based on redhat standards. */
   color: #fff;
@@ -30,7 +30,7 @@
   flex-direction: column;
 }
 
-pfe-accordion {
+rh-accordion {
   --pfe-context-background-color: transparent;
 }
 

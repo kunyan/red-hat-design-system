@@ -22,7 +22,7 @@ import './rh-footer-block.js';
 import './rh-global-footer.js';
 
 import '@patternfly/pfe-icon';
-import '@patternfly/pfe-accordion';
+import '@patternfly/rh-accordion';
 
 function isHeader(tagName: string) {
   return !!tagName.match(/^H[1-6]$/i);
@@ -154,11 +154,11 @@ export class RhFooter extends LitElement {
     return !(isMobile && children) ? html`
       <slot name="links"></slot>
       ` : html`
-      <pfe-accordion on="dark" color-palette="darkest">${children.map((child, index) => staticHtml`
-        <pfe-accordion-${unsafeStatic(child.type)}>
+      <rh-accordion on="dark" color-palette="darkest">${children.map((child, index) => staticHtml`
+        <rh-accordion-${unsafeStatic(child.type)}>
           <slot name="links-${index}"></slot>
-         </pfe-accordion-${unsafeStatic(child.type)}>`)}
-      </pfe-accordion>
+         </rh-accordion-${unsafeStatic(child.type)}>`)}
+      </rh-accordion>
     `;
   }
 

@@ -206,7 +206,7 @@ describe('<rh-footer>', function() {
       });
 
       it('does not use accordion', function() {
-        expect(element.shadowRoot?.querySelectorAll('pfe-accordion')?.length).to.equal(0);
+        expect(element.shadowRoot?.querySelectorAll('rh-accordion')?.length).to.equal(0);
       });
 
       it.skip('is accessible', function() {
@@ -226,7 +226,7 @@ describe('<rh-footer>', function() {
       });
 
       it('uses accordion', function() {
-        expect(element.shadowRoot?.querySelectorAll('pfe-accordion')?.length).to.equal(1);
+        expect(element.shadowRoot?.querySelectorAll('rh-accordion')?.length).to.equal(1);
       });
 
       it.skip('is accessible', function() {

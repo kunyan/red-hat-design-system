@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { PfeDemoPage } from '@patternfly/pfe-tools/test/playwright/PfeDemoPage.js';
 
-const tagName = 'pfe-accordion';
+const tagName = 'rh-accordion';
 
 test.describe(tagName, () => {
   test('snapshot', async ({ page }) => {
