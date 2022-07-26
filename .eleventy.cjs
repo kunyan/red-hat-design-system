@@ -17,7 +17,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const pluginToc = require('@patternfly/pfe-tools/11ty/plugins/table-of-contents.cjs');
 const sassPlugin = require('eleventy-plugin-dart-sass');
 
-const path = require('path');
+const path = require('node:path');
 
 const markdownLib = markdownIt({
   html: true,
@@ -128,8 +128,10 @@ module.exports = function(eleventyConfig) {
     [`${path.dirname(require.resolve('@patternfly/pfe-styles'))}/*.{css,css.map}`]: 'assets'
   });
 
+  // generate a bundle that packs all of rhds with all dependencies
+  // into a single large javascript file
   eleventyConfig.on('eleventy.before', async () =>
-    import('./scripts/build.js')
+    import('./scripts/bundle.js')
       .then(m => m.build({
         outfile: '_site/assets/rhds.min.js',
         external: [],
