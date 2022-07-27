@@ -20,7 +20,7 @@ var rh_demo_default = styles;
 var RhDemo = class extends LitElement {
   constructor() {
     super();
-    import("@patternfly/rh-accordion");
+    import("@rhds/rh-accordion");
     import("@lrnwebcomponents/code-sample");
   }
   createRenderRoot() {

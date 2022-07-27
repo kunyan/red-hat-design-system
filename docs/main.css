@@ -506,8 +506,8 @@ footer ul {
   --pfe-theme--color--surface--darkest: #263b36;
 }
 
-#themeable-section.theme-3 pfe-accordion {
-  --pfe-accordion--Color: #477a72;
+#themeable-section.theme-3 rh-accordion {
+  --rh-accordion--Color: #477a72;
 }
 
 .PFElement {

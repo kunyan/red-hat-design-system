@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import '../rh-accordion/rh-accordion.js';
 
 import style from './rh-demo.css';
 
@@ -9,7 +10,6 @@ export class RhDemo extends LitElement {
 
   constructor() {
     super();
-    import('@patternfly/rh-accordion');
     import('@lrnwebcomponents/code-sample');
   }
 

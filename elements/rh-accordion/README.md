@@ -9,19 +9,19 @@ Read more about Accordion in the [PatternFly Elements Accordion documentation](h
 Load `<rh-accordion>` via CDN:
 
 ```html
-<script src="https://unpkg.com/@patternfly/rh-accordion?module"></script>
+<script src="https://unpkg.com/@rhds/rh-accordion?module"></script>
 ```
 
 Or, if you are using [NPM](https://npm.im), install it
 
 ```bash
-npm install @patternfly/rh-accordion
+npm install @rhds/rh-accordion
 ```
 
 Then once installed, import it to your application:
 
 ```js
-import '@patternfly/rh-accordion';
+import '@rhds/rh-accordion';
 ```
 ## Usage
 

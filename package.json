@@ -77,7 +77,6 @@
     "*.{js,ts}": "eslint --fix"
   },
   "dependencies": {
-    "@patternfly/pfe-accordion": "next",
     "@patternfly/pfe-autocomplete": "next",
     "@patternfly/pfe-avatar": "next",
     "@patternfly/pfe-badge": "next",

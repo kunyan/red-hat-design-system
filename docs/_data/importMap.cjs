@@ -4,7 +4,6 @@ const { join } = require('node:path');
 const { readdir } = require('node:fs/promises');
 
 const PFE_DEPS = [
-  '@patternfly/pfe-accordion@next',
   '@patternfly/pfe-band@next',
   '@patternfly/pfe-button@next',
   '@patternfly/pfe-card@next',
