@@ -17,9 +17,9 @@
 
 :host([on=dark][expanded]),
 :host([on=dark].animating) {
-  background-color: var(--rh-accordion--BackgroundColor--expanded, rgba(247, 247, 249, 0.1));
+  background-color: var(--rh-accordion--BackgroundColor--expanded, transparent);
   --rh-accordion--Color: var(--rh-accordion--Color--expanded, var(--pfe-broadcasted--text--on-dark, #fff));
-  --rh-accordion--accent: var(--rh-accordion--accent--expanded, var(--pfe-theme--color--ui-accent--on-dark, #73bcf7));
+  --rh-accordion--accent: var(--rh-accordion--accent--expanded, var(--pfe-theme--color--ui-accent--on-dark, #FF3333));
 }
 
 :host([expanded]:not(.animating)) {
@@ -129,18 +129,18 @@
 }
 
 :host([expanded]:not(.animating)) {
-  --rh-accordion--BoxShadow: var(--rh-accordion--BoxShadow--expanded, 0 5px 4px rgba(140, 140, 140, 0.35));
+  --rh-accordion--BoxShadow: var(--rh-accordion--BoxShadow--expanded, 0px 2px 4px #15151533);
 }
 
 :host([on=dark][expanded]),
 :host([on=dark].animating) {
-  --rh-accordion--BackgroundColor: var(--rh-accordion--BackgroundColor--expanded, rgba(247, 247, 249, 0.1));
+  --rh-accordion--BackgroundColor: var(--rh-accordion--BackgroundColor--expanded, transparent);
   --rh-accordion--Color: var(--rh-accordion--Color--expanded, var(--pfe-broadcasted--text--on-dark, #fff));
-  --rh-accordion--accent: var(--rh-accordion--accent--expanded, var(--pfe-theme--color--ui-accent--on-dark, #73bcf7));
+  --rh-accordion--accent: var(--rh-accordion--accent--expanded, var(--pfe-theme--color--ui-accent--on-dark, #FF3333));
 }
 
 :host([expanded]:not(.animating)) {
-  --rh-accordion--BoxShadow: var(--rh-accordion--BoxShadow--expanded, none);
+  --rh-accordion--BoxShadow: var(--rh-accordion--BoxShadow--expanded, 0px 2px 4px #15151533);
 }
 
 :host([on=saturated][expanded]),
@@ -151,5 +151,5 @@
 }
 
 :host([expanded]:not(.animating)) {
-  --rh-accordion--BoxShadow: var(--rh-accordion--BoxShadow--expanded, none);
+  --rh-accordion--BoxShadow: var(--rh-accordion--BoxShadow--expanded, 0px 2px 4px #15151533);
 }

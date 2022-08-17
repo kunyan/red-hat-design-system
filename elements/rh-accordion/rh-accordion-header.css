@@ -17,9 +17,9 @@
 
 :host([on=dark][expanded]),
 :host([on=dark].animating) {
-  background-color: var(--rh-accordion--BackgroundColor--expanded, rgba(247, 247, 249, 0.1));
+  background-color: var(--rh-accordion--BackgroundColor--expanded, transparent);
   --rh-accordion--Color: var(--rh-accordion--Color--expanded, var(--pfe-broadcasted--text--on-dark, #fff));
-  --rh-accordion--accent: var(--rh-accordion--accent--expanded, var(--pfe-theme--color--ui-accent--on-dark, #73bcf7));
+  --rh-accordion--accent: var(--rh-accordion--accent--expanded, var(--pfe-theme--color--ui-accent--on-dark, #FF3333));
 }
 
 :host([expanded]:not(.animating)) {
@@ -75,9 +75,10 @@
   background-color: transparent;
   color: var(--rh-accordion--Color, var(--pfe-broadcasted--text, #3c3f42));
   text-align: left;
-  font-family: var(--pfe-theme--font-family--heading, "Red Hat Display", "RedHatDisplay", "Overpass", Overpass, Arial, sans-serif);
+  /* font-family: var(--pfe-theme--font-family--heading, "Red Hat Display", "RedHatDisplay", "Overpass", Overpass, Arial, sans-serif); */
+  font-family: var(--rh-font-family-body-text, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
   font-size: var(--rh-accordion--FontSize--header, var(--pf-global--FontSize--xl, 1.25rem));
-  font-weight: var(--rh-accordion--FontWeight--header, var(--pfe-theme--font-weight--normal, 400));
+  font-weight: var(--rh-accordion--FontWeight--header, var(--rh-font-weight-heading-bold, 700));
   text-align: var(--rh-accordion--TextAlign, left);
   line-height: var(--pfe-theme--line-height, 1.5);
   --_typography-offset: calc((1em * var(--pfe-theme--line-height, 1.5) - 1em) / 2);
@@ -136,11 +137,11 @@
   --rh-accordion--accent: var(--rh-accordion--accent--active, var(--pfe-theme--color--ui-accent, #06c));
 }
 :host([on=dark]) .pf-c-accordion__toggle:hover, :host([on=dark]:not([expanded])) .pf-c-accordion__toggle:focus, :host([on=dark]) .pf-c-accordion__toggle:active {
-  background-color: var(--rh-accordion--BackgroundColor--active, rgba(247, 247, 249, 0.1));
+  background-color: var(--rh-accordion--BackgroundColor--active, transparent);
   --rh-accordion--Color: var(--rh-accordion--Color--active, var(--pfe-broadcasted--text, #3c3f42));
 }
 :host([on=dark]:not([expanded])) .pf-c-accordion__toggle:hover, :host([on=dark]:not([expanded])) .pf-c-accordion__toggle:active, :host([on=dark]:not([expanded])) .pf-c-accordion__toggle:focus {
-  --rh-accordion--accent: var(--rh-accordion--accent--active, var(--pfe-theme--color--ui-accent--on-dark, #73bcf7));
+  --rh-accordion--accent: var(--rh-accordion--accent--active, var(--pfe-theme--color--ui-accent--on-dark, #FF3333));
 }
 :host([on=saturated]) .pf-c-accordion__toggle:hover, :host([on=saturated]:not([expanded])) .pf-c-accordion__toggle:focus, :host([on=saturated]) .pf-c-accordion__toggle:active {
   background-color: var(--rh-accordion--BackgroundColor--active, rgba(0, 0, 0, 0.2));
@@ -162,6 +163,9 @@
   font-size: var(--rh-accordion--FontSize--header, var(--pf-global--FontSize--md, 1rem));
   font-weight: var(--rh-accordion--FontWeight--header, var(--pfe-theme--font-weight--semi-bold, 600));
 }
+:host([size]) .pf-c-accordion__toggle {
+  font-size: var(--rh-accordion--FontSize--header, var(--pf-global--FontSize--md, 1rem))
+}
 
 .pf-c-accordion__toggle-wrapper {
   flex-grow: 1;
@@ -182,7 +186,7 @@
   transition-timing-function: var(--pfe-theme--animation-timing, cubic-bezier(0.465, 0.183, 0.153, 0.946));
 }
 :host([expanded]) .pf-c-accordion__toggle-icon {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 :host([disclosure]:not([disclosure=false])) .pf-c-accordion__toggle-icon {
   order: -1;

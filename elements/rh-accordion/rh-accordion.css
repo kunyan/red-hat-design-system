@@ -17,9 +17,9 @@
 
 :host([on=dark][expanded]),
 :host([on=dark].animating) {
-  background-color: var(--rh-accordion--BackgroundColor--expanded, rgba(247, 247, 249, 0.1));
+  background-color: var(--rh-accordion--BackgroundColor--expanded, transparent);
   --rh-accordion--Color: var(--rh-accordion--Color--expanded, var(--pfe-broadcasted--text--on-dark, #fff));
-  --rh-accordion--accent: var(--rh-accordion--accent--expanded, var(--pfe-theme--color--ui-accent--on-dark, #73bcf7));
+  --rh-accordion--accent: var(--rh-accordion--accent--expanded, var(--pfe-theme--color--ui-accent--on-dark, #FF3333));
 }
 
 :host([expanded]:not(.animating)) {

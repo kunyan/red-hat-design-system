@@ -170,6 +170,14 @@ export class RhAccordion extends LitElement {
     disclosure?: 'true'|'false';
 
   /**
+   * Optionally accepts a size attribute.
+   * Will change the size of the text in the component.
+   */
+  @cascades('rh-accordion-header', 'rh-accordion-panel')
+  @property({ type: String, reflect: true })
+    size?: 'small';
+
+  /**
    * Updates `window.history` and the URL to create sharable links.
    * With the `history` attribute, the accordion *must* have an `id`.
    *
