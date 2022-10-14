@@ -806,3 +806,7 @@ dl.member dd {
   display: block;
 }
 
+playground-project {
+  background-color: pink;
+  min-height: 200px;
+}
