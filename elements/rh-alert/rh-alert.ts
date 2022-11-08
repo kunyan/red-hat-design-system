@@ -42,7 +42,7 @@ export class AlertCloseEvent extends ComposedEvent {
  *
  * @summary An alert to display information on a website.
  *
- * @fires {AlertCloseEvent} close - when the dismissable alert closes
+ * @fires {AlertCloseEvent} close - when the dismissible alert closes
  *
  * @slot         - Provide a description for the alert message
  * @slot header  - Provide a header for the alert message.
@@ -65,7 +65,7 @@ export class RhAlert extends LitElement {
 
   @property({ reflect: true, type: Boolean }) toast = false;
 
-  @property({ reflect: true, type: Boolean }) dismissable = false;
+  @property({ reflect: true, type: Boolean }) dismissible = false;
 
   #closeHandler() {
     const event = new AlertCloseEvent();
@@ -86,7 +86,7 @@ export class RhAlert extends LitElement {
             <div id="header">
               <slot name="header"></slot>
             </div>
-            ${this.dismissable ?
+            ${this.dismissible ?
         html`
             <div id="header-actions">
               <button id="close-button" aria-label="Close" confirm @click=${this.#closeHandler}>${ICONS.get('close')}</button>

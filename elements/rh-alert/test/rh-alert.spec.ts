@@ -12,9 +12,9 @@ const defaultTemplate = html`
   </rh-alert>
 `;
 
-const dismissableTemplate = html`
-  <rh-alert dismissable>
-    <h3 slot="header">Default dismissable</h3>
+const dismissibleTemplate = html`
+  <rh-alert dismissible>
+    <h3 slot="header">Default dismissible</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend elit sed est
       egestas, a sollicitudin mauris tincidunt.</p>
     <button slot="actions" data-action="dismiss">Dismiss</button>
@@ -25,11 +25,11 @@ const dismissableTemplate = html`
 
 describe('<rh-alert>', function() {
   let element: RhAlert;
-  let dismissableElement: RhAlert;
+  let dismissibleElement: RhAlert;
 
   beforeEach(async function() {
     element = await fixture<RhAlert>(defaultTemplate);
-    dismissableElement = await fixture<RhAlert>(dismissableTemplate);
+    dismissibleElement = await fixture<RhAlert>(dismissibleTemplate);
   });
 
   it('should upgrade', async function() {
@@ -40,45 +40,45 @@ describe('<rh-alert>', function() {
       .to.be.an.instanceOf(RhAlert);
   });
 
-  describe('dismissable <rh-alert>', async () => {
+  describe('dismissible <rh-alert>', async () => {
     let elementCloseButton: HTMLButtonElement | undefined | null;
 
     beforeEach(async function() {
-      elementCloseButton = dismissableElement.shadowRoot?.querySelector('#close-button');
+      elementCloseButton = dismissibleElement.shadowRoot?.querySelector('#close-button');
     });
 
-    it('should only show the close button if the dismissable attribute is present', () => {
+    it('should only show the close button if the dismissible attribute is present', () => {
       expect(element.shadowRoot?.querySelector('#close-button')).to.be.null;
       expect(elementCloseButton).not.to.be.undefined;
     });
 
-    it('should send a close event on dismissable close button click', async () => {
-      elementCloseButton = dismissableElement.shadowRoot?.querySelector('#close-button');
+    it('should send a close event on dismissible close button click', async () => {
+      elementCloseButton = dismissibleElement.shadowRoot?.querySelector('#close-button');
 
       setTimeout(function() {
         elementCloseButton?.click();
       });
-      await oneEvent(dismissableElement, 'close');
-      dismissableElement.requestUpdate();
+      await oneEvent(dismissibleElement, 'close');
+      dismissibleElement.requestUpdate();
 
-      await dismissableElement.updateComplete;
-      expect(dismissableElement.isConnected).to.be.false;
+      await dismissibleElement.updateComplete;
+      expect(dismissibleElement.isConnected).to.be.false;
     });
 
     it('should be able to prevent default on the close event', async () => {
-      elementCloseButton = dismissableElement.shadowRoot?.querySelector('#close-button');
+      elementCloseButton = dismissibleElement.shadowRoot?.querySelector('#close-button');
 
-      dismissableElement?.addEventListener('close', event => {
+      dismissibleElement?.addEventListener('close', event => {
         event.preventDefault();
       });
       setTimeout(function() {
         elementCloseButton?.click();
       });
-      await oneEvent(dismissableElement, 'close');
-      dismissableElement.requestUpdate();
+      await oneEvent(dismissibleElement, 'close');
+      dismissibleElement.requestUpdate();
 
-      await dismissableElement.updateComplete;
-      expect(dismissableElement.isConnected).to.be.true;
+      await dismissibleElement.updateComplete;
+      expect(dismissibleElement.isConnected).to.be.true;
     });
   });
 });

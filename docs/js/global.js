@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
   }
 });
 
-// Dismissable alert
+// Dismissible alert
 
 // eslint-disable-next-line no-unused-vars
 // function closeBanner(target) {
